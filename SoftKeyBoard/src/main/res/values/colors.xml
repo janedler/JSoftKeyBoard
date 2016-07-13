@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="keyborad_write">#FFFFFF</color>
+    <color name="keyborad_gray">#ededed</color>
+    <color name="keyborad_line">#cccccc</color>
+    <color name="keyborad_black">#000000</color>
+
+
+    <color name="keyborad_confirm">#3da4fe</color>
+
+
+</resources>

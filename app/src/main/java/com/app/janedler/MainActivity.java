@@ -1,95 +1,52 @@
 package com.app.janedler;
 
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.janedler.SoftKeyBoardUtil;
-
-import java.lang.reflect.Method;
+import com.safe.keyboard.util.KeyboardType;
+import com.safe.keyboard.view.InputEditText;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private EditText mEditText;
-    private SoftKeyBoardUtil mSoftKeyBoardUtil;
+    private Button customBtn;
+    private Button complexBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mEditText = (EditText) findViewById(R.id.editText);
+        customBtn = (Button) findViewById(R.id.btn1);
+        complexBtn = (Button) findViewById(R.id.btn2);
 
-        mSoftKeyBoardUtil = new SoftKeyBoardUtil(this,mEditText);
-
-        mEditText.setOnTouchListener(new View.OnTouchListener() {
+        customBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Log.e("TAG","setOnTouchListener");
-                mSoftKeyBoardUtil.showSoftKeyBoard();
-                return false;
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,KeyboardActivity.class);
+                startActivity(intent);
             }
         });
 
-
-        mEditText.addTextChangedListener(new TextWatcher() {
+        complexBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                Toast.makeText(MainActivity.this,"内容>>"+s,Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,SafeKeyboardActivity.class);
+                startActivity(intent);
             }
         });
 
     }
 
-
-
-
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mSoftKeyBoardUtil.registerSoftKeyBoard();
-    }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mSoftKeyBoardUtil.unRegisterSoftKeyBoard();
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        if (mSoftKeyBoardUtil.isShowSoftKeyBorad()){
-            mSoftKeyBoardUtil.hideSoftKeyBoard();
-        }else{
-            mSoftKeyBoardUtil.unRegisterSoftKeyBoard();
-            super.onBackPressed();
-        }
-
-    }
 }

@@ -4,23 +4,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    <com.safe.keyboard.view.InputEditText
+        android:id="@+id/inputEditText"
+        android:layout_below="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/open"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="普通键盘"/>
-
+        android:text="打开键盘"/>
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/close"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="安全键盘"/>
-
-
-
+        android:text="关闭键盘"/>
 
 </LinearLayout>

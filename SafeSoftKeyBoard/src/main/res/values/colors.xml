@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--  数字键盘点击颜色 -->
+    <color name="safe_numskb_click_bg">#d9d9d9</color>
+
+    <color name="white">#ffffffff</color>
+
+    <color name="black">#000000</color>
+
+    <!-- 数字键盘默认背景颜色 -->
+    <color name="safe_numskb_bg">#ffffff</color>
+
+    <!--  数字键盘完成和删除前景色 -->
+    <color name="safe_numskb_specialkey_foreground">#cccccc</color>
+
+    <!--  标题背景颜色 -->
+    <color name="safe_skbtitle_gb">#fafafa</color>
+
+</resources>
